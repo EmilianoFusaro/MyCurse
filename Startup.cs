@@ -15,7 +15,7 @@ namespace MyCourse
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddMvc(); //per aggiungere servizio route  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,19 +31,27 @@ namespace MyCourse
             //permette utilizzo file statici nella cartella wwwroot
             app.UseStaticFiles();
 
-            app.Run(async (context) =>
-            {
-                string nome = context.Request.Query["nome"];
-                if (nome==null)
-                {
-                    nome="NESSUNO";
-                }
-                //await context.Response.WriteAsync("Ciao Mondo Cane!!");
-                await context.Response.WriteAsync($"Ciao Mondo {nome.ToUpper()}!");
-                //context.Request.Path;
-                //context.Request.Host;
-                //context.Request.Query["id"];                                    
+            // app.Run(async (context) =>
+            // {
+            //     string nome = context.Request.Query["nome"];
+            //     if (nome==null)
+            //     {
+            //         nome="NESSUNO";
+            //     }
+            //     //await context.Response.WriteAsync("Ciao Mondo Cane!!");
+            //     await context.Response.WriteAsync($"Ciao Mondo {nome.ToUpper()}!");
+            //     //context.Request.Path;
+            //     //context.Request.Host;
+            //     //context.Request.Query["id"];                                    
+            // });
+
+            //app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routeBuilder =>{
+                //routeBuilder.MapRoute("default","{controller}/{action}/{id}");
+                routeBuilder.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
