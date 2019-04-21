@@ -13,7 +13,8 @@ namespace MyCourse.Controllers
         public IActionResult Detail(string id)
         {
             //return Content($"Sono Detail!!, ho ricevuto l'id {id}");
-            return View();            
+            return View();
+            //ok
         }
     }
 }
