@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using MyCourse.Models.Services.Application;
 
 namespace MyCourse
 {
@@ -18,6 +19,11 @@ namespace MyCourse
         {
             //services.AddMvc(); //per aggiungere servizio route  
             services.AddMvc();  //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddTransient<CourseService>();
+            services.AddTransient<ICourseService,CourseService>(); //non posso implementare solo l'interfaccia
+            //AddTransient Crea un componente ogni volta che ne a bisogno e poi lo distrugge (usare quando la classe e relativamente semplice)
+            //AddScoped la crea e l'utilizza finchè siamo nella stessa richiesta http e poi la distrugge (usare qunado il servizio è pesante esempio entityframework o quando devo passare info da middleware a controller)
+            //AddSingleton crea un'istanza e la inietta in tutti i componenti anche in richieste http differenti (una in tutta l'applicazione (quando il servizio deve spedire email)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
