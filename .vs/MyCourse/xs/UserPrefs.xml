@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{5E24C19D-3B37-4E6F-8F29-0AA37834EC78}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Courses/detail.cshtml">
+    <Files>
+      <File FileName="Models/Services/Infrastructure/SqliteDatabaseAccessor.cs" Line="13" Column="1" />
+      <File FileName="Controllers/CoursesController.cs" Line="22" Column="1" />
+      <File FileName="Views/Home/detail.cshtml" Line="1" Column="1" />
+      <File FileName="Views/Courses/detail.cshtml" Line="72" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="MyCourse" expanded="True">
+            <Node name="MyCourse" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Services" expanded="True">
+                  <Node name="Application" expanded="True" />
+                  <Node name="Infrastructure" expanded="True" />
+                </Node>
+                <Node name="ViewModels" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Courses" expanded="True">
+                  <Node name="detail.cshtml" selected="True" />
+                </Node>
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MyCourse PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/emilianofusaro1/Dropbox/Udemy/asp.net core ita/MyCourse/Controllers/CoursesController.cs" relfile="Controllers/CoursesController.cs" line="21" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

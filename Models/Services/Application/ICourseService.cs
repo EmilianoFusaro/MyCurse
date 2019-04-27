@@ -1,4 +1,6 @@
-﻿using MyCourse.Models.ViewModels;
+﻿//COSA ESTRARRE
+
+using MyCourse.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,8 @@ namespace MyCourse.Models.Services.Application
 {
     public interface ICourseService
     {
-        List<CourseViewModel> GetCourses();
-        CourseDetailViewModel GetCourse(int id);
+        //non serve async nell'interfaccia
+        Task<List<CourseViewModel>> GetCourses();
+        Task<CourseDetailViewModel> GetCourse(int id);
     }
 }

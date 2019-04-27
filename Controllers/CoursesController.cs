@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MyCourse.Models.Services.Application;
 using MyCourse.Models.ViewModels;
+using System.Threading.Tasks;
 
 namespace MyCourse.Controllers
 {
@@ -18,22 +19,22 @@ namespace MyCourse.Controllers
             this.courseService = courseService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //return Content("Sono Index");
             //CourseService courseService = new CourseService();
             //oppure
             //var courseService = new CourseService();
-            List<CourseViewModel> courses = courseService.GetCourses();
+            List<CourseViewModel> courses = await courseService.GetCourses();
             ViewData["Title"] = "Catalogo Dei Corsi !!";
             return View(courses);
         }
 
-        public IActionResult Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
             //return Content($"Sono Detail, ho ricevuto l'id {id}");
             //var courseService = new CourseService();
-            CourseDetailViewModel viewModel = courseService.GetCourse(id);
+            CourseDetailViewModel viewModel = await courseService.GetCourse(id);
             //viewdata e viewbag servono allo stesso scopo
             ViewBag.Title = viewModel.Title;
             ViewData["Title"] = viewModel.Title;
